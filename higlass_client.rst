@@ -1,6 +1,41 @@
 HiGlass Client (Developer)
 ##########################
 
+View configs (viewconfs)
+========================
+
+The entire state of a HiGlass composition is defined in a **viewconfig** file.
+This is a JSON declaration of what data should be displayed, where it should be
+displayed and how it should be rendered.
+
+All uids are optional. If they aren't specified, they will be randomly generated.
+Note that if there are any locks, the uuids
+
+Overlays
+--------
+
+Overlays highlight regions in other tracks. The tracks it highlights are specified
+in the `includes` field. The extent is the region that will be highlighted in that
+field. If the track is a 1D track, only the first part of the extent will be used.
+The extent uses absolute coordinates so any translation between genomic and
+absolute coordinates needs to be performed elsewhere.
+
+.. code-block:: json
+
+    {
+        "overlays": [
+            {
+                uid: 'aa',
+                includes: ['track1Uid', 'track2Uid'],
+                options: [
+                    extent: [[0,10000],[3000,4000]]
+                ]
+            }
+        ]
+    }
+    
+
+
 1D Tracks
 *********
 

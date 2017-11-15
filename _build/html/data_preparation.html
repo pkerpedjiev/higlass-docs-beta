@@ -176,10 +176,11 @@ This can be done using clodius’s aggregate bigwig function:</p>
 <p>It can also be loaded using a curl commands:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>curl -u <span class="sb">`</span>cat ~/.higlass-server-login<span class="sb">`</span>  <span class="se">\</span>
     -F <span class="s2">&quot;datafile=@cnvs_hw.hitile&quot;</span> <span class="se">\</span>
-    -F <span class="s2">&quot;filetype=hitile&quot;</span> <span class="se">\</span>
-    -F <span class="s2">&quot;datatype=vector&quot;</span> <span class="se">\</span>
-    -F <span class="s2">&quot;coordSystem=hg19&quot;</span> <span class="se">\</span>
-    http://higlass.io:80/api/v1/tilesets/
+    -F <span class="s2">&quot;name=&quot;</span>CNVS track<span class="s2">&quot; \</span>
+<span class="s2">    -F &quot;</span><span class="nv">filetype</span><span class="o">=</span>hitile<span class="s2">&quot; \</span>
+<span class="s2">    -F &quot;</span><span class="nv">datatype</span><span class="o">=</span>vector<span class="s2">&quot; \</span>
+<span class="s2">    -F &quot;</span><span class="nv">coordSystem</span><span class="o">=</span>hg19<span class="s2">&quot; \</span>
+<span class="s2">    http://higlass.io:80/api/v1/tilesets/</span>
 </pre></div>
 </div>
 </div>
@@ -261,7 +262,8 @@ they are defined in:</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_client.html">HiGlass Client (Developer)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="higlass_client.html#d-tracks">1D Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_client.html#view-configs-viewconfs">View configs (viewconfs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_client.html#line-tracks">Line Tracks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>

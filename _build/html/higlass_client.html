@@ -42,12 +42,42 @@
             
   <div class="section" id="higlass-client-developer">
 <h1>HiGlass Client (Developer)<a class="headerlink" href="#higlass-client-developer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="view-configs-viewconfs">
+<h2>View configs (viewconfs)<a class="headerlink" href="#view-configs-viewconfs" title="Permalink to this headline">¶</a></h2>
+<p>The entire state of a HiGlass composition is defined in a <strong>viewconfig</strong> file.
+This is a JSON declaration of what data should be displayed, where it should be
+displayed and how it should be rendered.</p>
+<p>All uids are optional. If they aren’t specified, they will be randomly generated.
+Note that if there are any locks, the uuids</p>
+<div class="section" id="overlays">
+<h3>Overlays<a class="headerlink" href="#overlays" title="Permalink to this headline">¶</a></h3>
+<p>Overlays highlight regions in other tracks. The tracks it highlights are specified
+in the <cite>includes</cite> field. The extent is the region that will be highlighted in that
+field. If the track is a 1D track, only the first part of the extent will be used.
+The extent uses absolute coordinates so any translation between genomic and
+absolute coordinates needs to be performed elsewhere.</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;overlays&quot;: [
+        {
+            uid: &#39;aa&#39;,
+            includes: [&#39;track1Uid&#39;, &#39;track2Uid&#39;],
+            options: [
+                extent: [[0,10000],[3000,4000]]
+            ]
+        }
+    ]
+}
+</pre></div>
+</div>
 <div class="section" id="d-tracks">
-<h2>1D Tracks<a class="headerlink" href="#d-tracks" title="Permalink to this headline">¶</a></h2>
+<h4>1D Tracks<a class="headerlink" href="#d-tracks" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
 <div class="section" id="line-tracks">
-<h3>Line Tracks<a class="headerlink" href="#line-tracks" title="Permalink to this headline">¶</a></h3>
+<h2>Line Tracks<a class="headerlink" href="#line-tracks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scaling">
-<h4>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h4>
+<h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h3>
 <p>1D tracks can either be linearly or log scaled. Linear scaling denotes a linear
 mapping between the values and their position on the track. Log scaling means
 that we take the log of the values before positioning them.</p>
@@ -57,12 +87,11 @@ the data are not drowned out by extreme small values.</p>
 <p>The code for this can be found in <code class="docutils literal"><span class="pre">HorizontalLine1DPixiTrack.drawTile</span></code>.</p>
 </div>
 <div class="section" id="interface">
-<h4>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h4>
+<h3>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h3>
 <p>visibleAndFetchedIds: Tile ids that correspond to tiles which are both visible
 in the current viewport as well as fetched from the server.</p>
 <p>visibleTileIds: Tiles which should be visible in the current viewport based on
 the current viewport. Usually set by <code class="docutils literal"><span class="pre">calculateVisibleTiles</span></code>.</p>
-</div>
 </div>
 </div>
 </div>
@@ -102,7 +131,8 @@ the current viewport. Usually set by <code class="docutils literal"><span class=
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">HiGlass Client (Developer)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#d-tracks">1D Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-configs-viewconfs">View configs (viewconfs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-tracks">Line Tracks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>

@@ -164,6 +164,7 @@ It can also be loaded using a curl commands:
     
     curl -u `cat ~/.higlass-server-login`  \
         -F "datafile=@cnvs_hw.hitile" \
+        -F "name="CNVS track" \
         -F "filetype=hitile" \
         -F "datatype=vector" \
         -F "coordSystem=hg19" \
