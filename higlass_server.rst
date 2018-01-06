@@ -1,5 +1,5 @@
-HiGlass Server
-==============
+Server
+======
 
 .. toctree::
     :maxdepth: 2
@@ -16,7 +16,7 @@ server is started:
 
     export OPTION=value; python manage.py runserver
 
-``BASE_DIR`` - Set the Django base directory. This is where Django will 
+``BASE_DIR`` - Set the Django base directory. This is where Django will
 look for the database and the media directories.
 
 ``REDIS_HOST`` - The host name for the redis server to use for tile caching.  If
@@ -33,7 +33,7 @@ Development
 Running the server locally:
 
 .. code-block:: bash
-    
+
     python manage.py runserver 8000
 
 Testing
@@ -78,7 +78,7 @@ one dimension.
 Next we need to ingest the file into the server:
 
 .. code-block:: bash
-    
+
     python manage.py   ingest_tileset   --filename tmp/my_file.multires   --datatype multi-vector   --filetype multivec   --coordSystem hg19 --uid RAh2nvU9THezcVuxBU3ioQ
 
 Under normal circumstances, we don't need to speicfy a uid, but in this case
@@ -120,12 +120,12 @@ the file. If it is of type ``multived`` we need to return a special type of
         '''
         Return some information about this tileset that will
         help render it in on the client.
-        
+
         Parameters
         ----------
         filename: str
             The filename of the h5py file containing the tileset info
-        
+
         Returns
         -------
         tileset_info: {}
@@ -138,21 +138,21 @@ the file. If it is of type ``multived`` we need to return a special type of
         # are datapoints / pixel so lower resolution is actually a higher
         # number
         resolutions = sorted([int(r) for r in f['resolutions'].keys()])[::-1]
-        
+
         # the "leftmost" datapoint position
         # an array because higlass can display multi-dimensional
         # data
         min_pos = [0]
-        
+
         # the "rightmost" datapoint position
         max_pos = [len(f['resolutions'][str(resolutions[-1])])]
         tile_size = 1024
 
         f.close()
-        
+
         return {
             'resolutions': resolutions,
-            'min_pos': min_pos, 
+            'min_pos': min_pos,
             'tile_size': tile_size
         }
 
@@ -168,7 +168,7 @@ Now that we have the tileset info, we just need the tiles. We can verify that
 we have no way of accessing tiles right now:
 
 .. code-block:: bash
-    
+
     pete@twok:~/projects/higlass-server [master|!SP]$ curl localhost:8000/api/v1/tiles/?d=RAh2nvU9THezcVuxBU3ioQ.0.0
     {"RAh2nvU9THezcVuxBU3ioQ.0.0": {"error": "Unknown tileset filetype: multivec"}}
 
@@ -256,12 +256,12 @@ Or using curl:
         -F "name=Chromosomes (mm10)" \
         http://higlass.io/api/v1/tilesets/
 
-This should return a JSON object contain a UUID to confirm that the data has been 
+This should return a JSON object contain a UUID to confirm that the data has been
 added to the server:
 
 .. code-block:: json
 
-    {  
+    {
        "uuid":"DRpJETNeTAShnhng6KhhXw",
        "datafile":"http://higlass.io/api/v1/tilesets/media/uploads/chromInfo_ui7zU3M.txt",
        "filetype":"chromsizes-tsv",
