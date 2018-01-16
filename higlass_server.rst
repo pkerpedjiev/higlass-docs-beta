@@ -226,8 +226,7 @@ With this code in place, we should be able to call the tiles API and get back da
 Note that the data has been omitted in this example in lieu of an ellipsis.
 
 Chromosome sizes
-~~~~~~~~~~~~~~~~
-
+^^^^^^^^^^^^^^^^
 Chromosome sizes specify the lengths of the chromosomes that make up an
 assembly. While they have no intrinsic biological order, HiGlass displays all
 chromosomes together on a line so the order of the entries in the file does
@@ -272,6 +271,27 @@ added to the server:
        "coordSystem2":"",
        "created":"2017-08-10T18:44:40.369924Z"
     }
+
+API
+---
+
+Retrieving a list of available tilesets:
+
+.. code-block:: bash
+
+    curl localhost:8000/api/v1/tilesets
+
+To filter by a specific filetype, use the `t=filetype` parameter:
+
+.. code-block:: bash
+
+    curl localhost:8000/api/v1/tilesets?t=cooler
+
+To fileter by datatype, use the `dt=datatype` parameter:
+
+.. code-block:: bash
+
+    curl localhost:8000/api/v1/tilesets?dt=matrix
 
 Testing
 ^^^^^^^
