@@ -379,11 +379,28 @@ get(prop, viewId): Instant getter for event data
 
 Naturally, event listeners only return news once an event has been published but sometimes one needs to get the data at a certain time. The get method returns the current value of an event without having to wait for the event to fire.
 
+Additionally, it's possible to retrieve a png or svg snapshot of the current view using ``png`` and ``svg`` as ``prop`` respectively.
+
 .. code-block:: javascript
 
   const currentLocationOfViewId = hgv.get('location', 'viewId');
   const currentRangeSelection = hgv.get('rangeSelection');
   const currentViewConfig = hgv.get('viewConfig');
+  const pngSnapshot = hgv.get('png');
+  const svgSnapshot = hgv.get('svg');
+
+shareViewConfigAsLink(): Get sharable link for current view config
+------------------------------------------------------------------
+
+Generate a sharable link to the current view config.
+
+.. code-block:: javascript
+
+  hgv.shareViewConfigAsLink()
+    .then((sharedViewConfig) => {
+      console.log(`Shared view config (ID: ${sharedViewConfig.id}) is available at ${sharedViewConfig.url}`)
+    })
+    .catch((err) => { console.error('Something did not work. Sorry', err); })
 
 Obtaining ordered chromosome info
 ---------------------------------
