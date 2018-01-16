@@ -379,15 +379,15 @@ get(prop, viewId): Instant getter for event data
 
 Naturally, event listeners only return news once an event has been published but sometimes one needs to get the data at a certain time. The get method returns the current value of an event without having to wait for the event to fire.
 
-Additionally, it's possible to retrieve a png or svg snapshot of the current view using ``png`` and ``svg`` as ``prop`` respectively.
+Additionally, it's possible to retrieve a png or svg snapshot of the current view using ``png`` and ``svg`` as ``prop`` respectively. The png snapshot comes in form of a data URI and the svg snapshot is a XML string.
 
 .. code-block:: javascript
 
   const currentLocationOfViewId = hgv.get('location', 'viewId');
   const currentRangeSelection = hgv.get('rangeSelection');
   const currentViewConfig = hgv.get('viewConfig');
-  const pngSnapshot = hgv.get('png');
-  const svgSnapshot = hgv.get('svg');
+  const pngSnapshot = hgv.get('png');  // Data URI
+  const svgSnapshot = hgv.get('svg');  // XML string
 
 shareViewConfigAsLink(url): Get sharable link for current view config
 ------------------------------------------------------------------
