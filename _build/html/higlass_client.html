@@ -347,9 +347,25 @@ doesn’t, an exception will be thrown.</p>
 <div class="section" id="get-prop-viewid-instant-getter-for-event-data">
 <h3>get(prop, viewId): Instant getter for event data<a class="headerlink" href="#get-prop-viewid-instant-getter-for-event-data" title="Permalink to this headline">¶</a></h3>
 <p>Naturally, event listeners only return news once an event has been published but sometimes one needs to get the data at a certain time. The get method returns the current value of an event without having to wait for the event to fire.</p>
+<p>Additionally, it’s possible to retrieve a png or svg snapshot of the current view using <code class="docutils literal"><span class="pre">png</span></code> and <code class="docutils literal"><span class="pre">svg</span></code> as <code class="docutils literal"><span class="pre">prop</span></code> respectively. The png snapshot comes in form of a data URI and the svg snapshot is a XML string.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">currentLocationOfViewId</span> <span class="o">=</span> <span class="nx">hgv</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;viewId&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">currentRangeSelection</span> <span class="o">=</span> <span class="nx">hgv</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;rangeSelection&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">currentViewConfig</span> <span class="o">=</span> <span class="nx">hgv</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;viewConfig&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">pngSnapshot</span> <span class="o">=</span> <span class="nx">hgv</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;png&#39;</span><span class="p">);</span>  <span class="c1">// Data URI</span>
+<span class="kr">const</span> <span class="nx">svgSnapshot</span> <span class="o">=</span> <span class="nx">hgv</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">);</span>  <span class="c1">// XML string</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shareviewconfigaslink-url-get-sharable-link-for-current-view-config">
+<h3>shareViewConfigAsLink(url): Get sharable link for current view config<a class="headerlink" href="#shareviewconfigaslink-url-get-sharable-link-for-current-view-config" title="Permalink to this headline">¶</a></h3>
+<p>Generate a sharable link to the current view config. The <cite>url</cite> parameter should contain
+the API endpoint used to export the view link (e.g. ‘<a class="reference external" href="http://localhost:8989/api/v1/viewconfs">http://localhost:8989/api/v1/viewconfs</a>’).
+If it is not provided, the value is taken from the <cite>exportViewUrl</cite> value of the viewconf.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">hgv</span><span class="p">.</span><span class="nx">shareViewConfigAsLink</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">sharedViewConfig</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Shared view config (ID: </span><span class="si">${</span><span class="nx">sharedViewConfig</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">) is available at </span><span class="si">${</span><span class="nx">sharedViewConfig</span><span class="p">.</span><span class="nx">url</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Something did not work. Sorry&#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span> <span class="p">})</span>
 </pre></div>
 </div>
 </div>
