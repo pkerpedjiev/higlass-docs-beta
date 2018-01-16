@@ -390,7 +390,7 @@ Additionally, it's possible to retrieve a png or svg snapshot of the current vie
   const svgSnapshot = hgv.get('svg');  // XML string
 
 shareViewConfigAsLink(url): Get sharable link for current view config
-------------------------------------------------------------------
+---------------------------------------------------------------------
 
 Generate a sharable link to the current view config. The `url` parameter should contain
 the API endpoint used to export the view link (e.g. 'http://localhost:8989/api/v1/viewconfs').
