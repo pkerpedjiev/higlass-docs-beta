@@ -29,8 +29,8 @@ External tracks should be included **before** the hglib.js import:
 Instructions for instantiating the component and interacting with it are in the 
 `Public API section <higlass_developer.html#public-api>`_.
 
-Public API
-***********
+Javascript API
+**************
 
 Available endpoints
 -------------------
@@ -100,6 +100,12 @@ GitHub repository
 
 ``verticalMargin: number [default: 5]``
     Vertical margin added by HiGlass
+
+``renderer: string [default: 'auto'], options=['webgl', 'canvas']``
+    Pick which type of renderer to use for HiGlass. WebGL is faster
+    but there is typically a limited number of WebGL contexts that 
+    are allowed in a browser. If you plan on loading many HiGlass 
+    viewers, consier using the a canvas renderer.
 
 .. code-block:: javascript
 
@@ -645,7 +651,6 @@ listed:
   chromPos = chromInfo.absToChr(absPos);
 
 
-
 Viewconfs
 *********
 
@@ -686,3 +691,14 @@ json (e.g. `{"viewconf": myViewConfig}`):
     curl -H "Content-Type: application/json" \
          -X POST \
          -d '{"viewconf": {"editable": true, "zoomFixed": false, "trackSourceServers": ["/api/v2", "http://higlass.io/api/v1"], "exportViewUrl": "/api/v1/viewconfs/", "views": [{"tracks": {"top": [], "left": [], "center": [], "right": [], "bottom": []}, "initialXDomain": [243883495.14563107, 2956116504.854369], "initialYDomain": [804660194.1747572, 2395339805.825243], "layout": {"w": 12, "h": 12, "x": 0, "y": 0, "i": "EwiSznw8ST2HF3CjHx-tCg", "moved": false, "static": false}, "uid": "EwiSznw8ST2HF3CjHx-tCg"}], "zoomLocks": {"locksByViewUid": {}, "locksDict": {}}, "locationLocks": {"locksByViewUid": {}, "locksDict": {}}, "valueScaleLocks": {"locksByViewUid": {}, "locksDict": {}}}}' http://localhost:8989/api/v1/viewconfs/
+
+
+Docker
+******
+
+Dropping individual cache entries
+---------------------------------
+
+.. code-block:: bash
+
+    docker exec container-redis-2017-12-16_21-19-59 redis-cli del Lm2XCdYQSVyRDkPABIUKGA.11.112
