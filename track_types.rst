@@ -95,8 +95,8 @@ displayed at different resolutions depending on the current zoom level. To
 limit the resolution of the displayed data, users can set the `Zoom Limit`
 configuration option.
 
-1D Heatmap
-==========
+Rotated Heatmap
+===============
 
 .. image:: img/horizontal-heatmap-thumb.png
     :align: right
