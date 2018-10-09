@@ -179,7 +179,7 @@ vector datatype and bigwig filetype:
 
     docker exec higlass-container python \
             higlass-server/manage.py ingest_tileset \
-            --filename /tmp/cnvs_hw.hitile \
+            --filename /tmp/cnvs_hw.bigWig \
             --filetype bigwig \
             --datatype vector \
             --coordSystem hg19
