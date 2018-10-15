@@ -5,6 +5,12 @@
 [![HiGlass](https://img.shields.io/badge/higlass-👍-red.svg?colorB=0f5d92)](http://higlass.io)
 [![Live Docs](https://img.shields.io/badge/docs-live-red.svg?colorB=0f5d92)](https://hms-dbmi.github.io/higlass-docs/)
 
+## Development docs
+
+See the latest version of the docs at [https://pkerpedjiev.github.io/higlass-docs-beta/](https://pkerpedjiev.github.io/higlass-docs-beta/).
+
+## Doc development
+
 Compiling: `./build.sh` or
 
 ```
