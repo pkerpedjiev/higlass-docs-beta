@@ -12,16 +12,16 @@ javascript and css files:
 
 .. code-block:: javascript
 
-    <link rel="stylesheet" href="https://unpkg.com/higlass@1.1.5/dist/styles/hglib.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/higlass@1.2.6/dist/hglib.css" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.2/pixi.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.0/react-bootstrap.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.1/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.32.1/react-bootstrap.min.js"></script>
 
-    <script src="https://unpkg.com/higlass@1.1.5/dist/scripts/hglib.js"></script>
+    <script src="https://unpkg.com/higlass@1.2.6/dist/hglib[.min].js"></script>
 
 External tracks should be included **before** the hglib.js import:
 
@@ -30,7 +30,7 @@ External tracks should be included **before** the hglib.js import:
     <script src="https://unpkg.com/higlass-multivec@0.1.10/dist/higlass-multivec.js"></script>
 
 Instructions for instantiating the component and interacting with it are in the 
-`Public API section <higlass_developer.html#public-api>`_.
+`Public API section <javascript_api.html#api-functions>`_.
 
 Available endpoints
 -------------------

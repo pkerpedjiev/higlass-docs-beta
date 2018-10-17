@@ -95,8 +95,8 @@ displayed at different resolutions depending on the current zoom level. To
 limit the resolution of the displayed data, users can set the `Zoom Limit`
 configuration option.
 
-1D Heatmap
-==========
+Rotated 2D Heatmap
+==================
 
 .. image:: img/horizontal-heatmap-thumb.png
     :align: right
@@ -104,8 +104,8 @@ configuration option.
 track-type: ``horizontal-heatmap``
 datatype: ``matrix``
 
-1D heatmaps are regulat 2D heatmaps sliced across the diagonal and rotated 45
-degrees. The base of the 1D heatmap is always the diagonal of the 2D heatmap.
+Rotated 2D heatmaps are regular 2D heatmaps sliced across the diagonal and rotated 45
+degrees. The base of the heatmap is always the diagonal of the 2D heatmap.
 This is useful for displaying data, such as HiC, which has prominent features
 along the diagonal.
 

@@ -201,10 +201,28 @@ visualization. bigWig files can be loaded directly into HiGlass using the
 vector datatype and bigwig filetype:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> higlass-container python <span class="se">\</span>
         higlass-server/manage.py ingest_tileset <span class="se">\</span>
-        --filename /tmp/cnvs_hw.hitile <span class="se">\</span>
+        --filename /tmp/cnvs_hw.bigWig <span class="se">\</span>
         --filetype bigwig <span class="se">\</span>
-        --datatype vector
+        --datatype vector <span class="se">\</span>
+        --coordSystem hg19
 </pre></div>
+</div>
+<p><strong>Important:</strong> BigWig files have to be associated with a chromosome order!!
+This means that there needs to be a chromsizes file for the
+specified assembly (coordSystem) in the higlass database. If no <code class="docutils literal"><span class="pre">coordSystem</span></code>
+is specified for the bigWig file in <code class="docutils literal"><span class="pre">ingest_tileset</span></code>, HiGlass will try to
+find one in the database that matches the chromosomes present in the bigWig file.
+If a <code class="docutils literal"><span class="pre">chromsizes</span></code> tileset is found, it’s <code class="docutils literal"><span class="pre">coordSystem</span></code> will also be used for
+the bigWig file. If none are found, the import will fail. If more than one is found,
+the import will also fail. If a <cite>coordSystem</cite> is specified for the bigWig, but no
+<code class="docutils literal"><span class="pre">chromsizes</span></code> are found on the server, the import will fail.</p>
+<p>TLDR: The simplest way to import a bigWig is to have a <code class="docutils literal"><span class="pre">chromsizes</span></code> present e.g.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">ingest_tileset</span> <span class="pre">--filetype</span> <span class="pre">chromsizes-tsv</span> <span class="pre">--datatype</span> <span class="pre">chromsizes</span> <span class="pre">--coordSystem</span> <span class="pre">hg19</span> <span class="pre">chromSizes.tsv</span></code></div>
+</div>
+<p>and then to add the bigWig with the same <code class="docutils literal"><span class="pre">coordSystem</span></code>:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">ingest_tileset</span> <span class="pre">--filetype</span> <span class="pre">bigwig</span> <span class="pre">--datatype</span> <span class="pre">vector</span> <span class="pre">--coordSystem</span> <span class="pre">hg19</span> <span class="pre">chromSizes.tsv</span></code></div>
 </div>
 </div>
 <div class="section" id="gene-annotation-tracks">
@@ -659,13 +677,13 @@ segment1    <span class="m">10</span>  <span class="m">100</span> <span class="m
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bed-like">Bed-like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#gene-annotations">Gene Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#heatmap">Heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#rotated-2d-heatmap">Rotated 2D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-rectangle-domain">2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#horizontal-2d-rectangle-domain">Horizontal 2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#line">Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bar">Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#id5">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-labels">Chromosome Labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-grid">Chromosome Grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#stacked-bars">Stacked Bars</a></li>
@@ -674,13 +692,9 @@ segment1    <span class="m">10</span>  <span class="m">100</span> <span class="m
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-annotations">1D Annotations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Contributor Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>
@@ -690,14 +704,23 @@ segment1    <span class="m">10</span>  <span class="m">100</span> <span class="m
 <li class="toctree-l2"><a class="reference internal" href="higlass_server.html#api">API</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="higlass_docker.html">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-locally">Running locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-remotely">Running remotely</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="view_config.html">View Configs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#show-a-specific-genomic-location">Show a specific genomic location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#upload-a-viewconf-to-the-server">Upload a viewconf to the server</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
 </ul>
 </li>
 </ul>

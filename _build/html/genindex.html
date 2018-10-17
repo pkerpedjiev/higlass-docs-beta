@@ -54,7 +54,7 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
+ <a href="#_"><strong>_</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#O"><strong>O</strong></a>
@@ -64,15 +64,15 @@
  | <a href="#Z"><strong>Z</strong></a>
  
 </div>
-<h2 id="A">A</h2>
+<h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api.html#hgflask.client.HiGlassView.add_track">add_track() (hgflask.client.HiGlassView method)</a>
+      <li><a href="python_api.html#hgflask.client.Track.__init__">__init__() (hgflask.client.Track method)</a>
+
+      <ul>
+        <li><a href="python_api.html#hgflask.client.View.__init__">(hgflask.client.View method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api.html#hgflask.client.HiGlassConfig.add_view">add_view() (hgflask.client.HiGlassConfig method)</a>
-</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -127,7 +127,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="javascript_api.html#shareViewConfigAsLink">shareViewConfigAsLink() (built-in function)</a>, <a href="javascript_api.html#shareViewConfigAsLink">[1]</a>
 </li>
-      <li><a href="python_api.html#hgflask.start">start() (in module hgflask)</a>
+      <li><a href="python_api.html#hgflask.server.start">start() (in module hgflask.server)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -210,13 +210,13 @@
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bed-like">Bed-like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#gene-annotations">Gene Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#heatmap">Heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#rotated-2d-heatmap">Rotated 2D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-rectangle-domain">2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#horizontal-2d-rectangle-domain">Horizontal 2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#line">Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bar">Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#id5">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-labels">Chromosome Labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-grid">Chromosome Grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#stacked-bars">Stacked Bars</a></li>
@@ -225,13 +225,9 @@
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-annotations">1D Annotations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Contributor Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>
@@ -241,14 +237,23 @@
 <li class="toctree-l2"><a class="reference internal" href="higlass_server.html#api">API</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="higlass_docker.html">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-locally">Running locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-remotely">Running remotely</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="view_config.html">View Configs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#show-a-specific-genomic-location">Show a specific genomic location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#upload-a-viewconf-to-the-server">Upload a viewconf to the server</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
 </ul>
 </li>
 </ul>

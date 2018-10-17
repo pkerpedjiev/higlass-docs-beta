@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributor Guidelines" href="developer.html" />
+    <link rel="next" title="Views" href="views.html" />
     <link rel="prev" title="Data Preparation" href="data_preparation.html" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77756807-1"></script>
@@ -122,13 +122,13 @@ displayed at different resolutions depending on the current zoom level. To
 limit the resolution of the displayed data, users can set the <cite>Zoom Limit</cite>
 configuration option.</p>
 </div>
-<div class="section" id="d-heatmap">
-<h2>1D Heatmap<a class="headerlink" href="#d-heatmap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rotated-2d-heatmap">
+<h2>Rotated 2D Heatmap<a class="headerlink" href="#rotated-2d-heatmap" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/horizontal-heatmap-thumb.png" class="align-right" src="_images/horizontal-heatmap-thumb.png" />
 <p>track-type: <code class="docutils literal"><span class="pre">horizontal-heatmap</span></code>
 datatype: <code class="docutils literal"><span class="pre">matrix</span></code></p>
-<p>1D heatmaps are regulat 2D heatmaps sliced across the diagonal and rotated 45
-degrees. The base of the 1D heatmap is always the diagonal of the 2D heatmap.
+<p>Rotated 2D heatmaps are regular 2D heatmaps sliced across the diagonal and rotated 45
+degrees. The base of the heatmap is always the diagonal of the 2D heatmap.
 This is useful for displaying data, such as HiC, which has prominent features
 along the diagonal.</p>
 </div>
@@ -185,8 +185,8 @@ datatype: <code class="docutils literal"><span class="pre">vector</span></code><
 they are well suited to data with NaNs because they do not require two points
 to draw something.</p>
 </div>
-<div class="section" id="id5">
-<span id="id6"></span><h2>1D Heatmap<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-heatmap">
+<span id="id5"></span><h2>1D Heatmap<a class="headerlink" href="#d-heatmap" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/1d-heatmap-track.png" class="align-right" src="_images/1d-heatmap-track.png" />
 <p>track-type: <code class="docutils literal"><span class="pre">horizontal-1d-heatmap</span></code> and <code class="docutils literal"><span class="pre">vertical-1d-heatmap</span></code>
 datatype: <code class="docutils literal"><span class="pre">vector</span></code></p>
@@ -215,7 +215,7 @@ with this track.</p>
 <a class="reference external" href="1d-heatmap-track-2.html">Genome browser-like view from HiGlass.io</a>.</div></blockquote>
 </div>
 <div class="section" id="chromosome-labels">
-<span id="id7"></span><h2>Chromosome Labels<a class="headerlink" href="#chromosome-labels" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Chromosome Labels<a class="headerlink" href="#chromosome-labels" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/chromosome-labels-thumb.png" class="align-right" src="_images/chromosome-labels-thumb.png" />
 <p>track-type: <code class="docutils literal"><span class="pre">horizontal-chromosome-labes</span></code>
 datatype: <code class="docutils literal"><span class="pre">chromsizes</span></code>
@@ -272,7 +272,7 @@ datatype: <code class="docutils literal"><span class="pre">multivec</span></code
 number of bar graphs.</p>
 </div>
 <div class="section" id="d-annotations">
-<span id="id8"></span><h2>1D Annotations<a class="headerlink" href="#d-annotations" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>1D Annotations<a class="headerlink" href="#d-annotations" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/1d-annotations.png" class="align-right" src="_images/1d-annotations.png" />
 <p>track-type: <code class="docutils literal"><span class="pre">horizontal-1d-annotations</span></code> and <code class="docutils literal"><span class="pre">vertical-1d-annotations</span></code>
 datatype: none</p>
@@ -358,13 +358,13 @@ parameter of the <code class="docutils literal"><span class="pre">options</span>
 <li class="toctree-l2"><a class="reference internal" href="#bed-like">Bed-like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gene-annotations">Gene Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heatmap">Heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#d-heatmap">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rotated-2d-heatmap">Rotated 2D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#d-rectangle-domain">2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#horizontal-2d-rectangle-domain">Horizontal 2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#line">Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bar">Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-heatmap">1D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chromosome-labels">Chromosome Labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chromosome-grid">Chromosome Grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#stacked-bars">Stacked Bars</a></li>
@@ -373,13 +373,9 @@ parameter of the <code class="docutils literal"><span class="pre">options</span>
 <li class="toctree-l2"><a class="reference internal" href="#d-annotations">1D Annotations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Contributor Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>
@@ -389,14 +385,23 @@ parameter of the <code class="docutils literal"><span class="pre">options</span>
 <li class="toctree-l2"><a class="reference internal" href="higlass_server.html#api">API</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="higlass_docker.html">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-locally">Running locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-remotely">Running remotely</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="view_config.html">View Configs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#show-a-specific-genomic-location">Show a specific genomic location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#upload-a-viewconf-to-the-server">Upload a viewconf to the server</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
 </ul>
 </li>
 </ul>
@@ -406,7 +411,7 @@ parameter of the <code class="docutils literal"><span class="pre">options</span>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="data_preparation.html" title="previous chapter">Data Preparation</a></li>
-      <li>Next: <a href="developer.html" title="next chapter">Contributor Guidelines</a></li>
+      <li>Next: <a href="views.html" title="next chapter">Views</a></li>
   </ul></li>
 </ul>
 </div>
