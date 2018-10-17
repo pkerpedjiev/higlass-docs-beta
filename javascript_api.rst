@@ -30,7 +30,7 @@ External tracks should be included **before** the hglib.js import:
     <script src="https://unpkg.com/higlass-multivec@0.1.10/dist/higlass-multivec.js"></script>
 
 Instructions for instantiating the component and interacting with it are in the 
-`Public API section <higlass_developer.html#public-api>`_.
+`Public API section <javascript_api.html#api-functions>`_.
 
 Available endpoints
 -------------------
