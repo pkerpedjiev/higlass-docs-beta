@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Contributor Guidelines &#8212; HiGlass v1.0 documentation</title>
+    <title>Developer Documentation &#8212; HiGlass v1.0 documentation</title>
     <link rel="stylesheet" href="_static/higlass.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Viewer" href="b_viewer.html" />
-    <link rel="prev" title="Track Types" href="track_types.html" />
+    <link rel="prev" title="View Configs" href="view_config.html" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77756807-1"></script>
   <script>
@@ -51,8 +51,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="contributor-guidelines">
-<h1>Contributor Guidelines<a class="headerlink" href="#contributor-guidelines" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="developer-documentation">
+<h1>Developer Documentation<a class="headerlink" href="#developer-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Contributions are in the form of issues, code, documentation are always very welcome. The
 following are a set of guidelines to help ensure that contributions can be smoothly
 merged into the existing code base:</p>
@@ -121,13 +121,13 @@ docstring for python code.</li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bed-like">Bed-like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#gene-annotations">Gene Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#heatmap">Heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#rotated-2d-heatmap">Rotated 2D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-rectangle-domain">2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#horizontal-2d-rectangle-domain">Horizontal 2D Rectangle Domain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#line">Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#bar">Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="track_types.html#id5">1D Heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="track_types.html#d-heatmap">1D Heatmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-labels">Chromosome Labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#chromosome-grid">Chromosome Grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#stacked-bars">Stacked Bars</a></li>
@@ -136,13 +136,9 @@ docstring for python code.</li>
 <li class="toctree-l2"><a class="reference internal" href="track_types.html#d-annotations">1D Annotations</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributor Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="higlass_server.html">Server</a><ul>
@@ -152,14 +148,23 @@ docstring for python code.</li>
 <li class="toctree-l2"><a class="reference internal" href="higlass_server.html#api">API</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="higlass_docker.html">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-locally">Running locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="higlass_docker.html#running-remotely">Running remotely</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="view_config.html">View Configs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#show-a-specific-genomic-location">Show a specific genomic location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_config.html#upload-a-viewconf-to-the-server">Upload a viewconf to the server</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="views.html#genome-position-search-box">Genome Position Search Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#view-synchronization">View synchronization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="b_viewer.html">Viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-views">Adding views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#closing-and-resizing-views">Closing and resizing views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#replacing-tracks">Replacing Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#synchronizing-zoom-and-location">Synchronizing zoom and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_viewer.html#adding-cross-sections">Adding cross sections</a></li>
 </ul>
 </li>
 </ul>
@@ -168,7 +173,7 @@ docstring for python code.</li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="track_types.html" title="previous chapter">Track Types</a></li>
+      <li>Previous: <a href="view_config.html" title="previous chapter">View Configs</a></li>
       <li>Next: <a href="b_viewer.html" title="next chapter">Viewer</a></li>
   </ul></li>
 </ul>
